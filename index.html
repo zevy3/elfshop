@@ -17,14 +17,11 @@
         <div class="logo-text">Elf<span>Shop</span></div>
       </a>
       <div class="header-right">
-        <!-- ERSETZE @your_instagram mit deinem Account -->
-        <a href="https://instagram.com/your_instagram" target="_blank" rel="noopener" class="instagram-link">
+        <a href="https://t.me/elfshops" target="_blank" rel="noopener" class="instagram-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 6.498c-1.532.604-1.524 1.448-.278 1.822l4.212 1.31 1.64 5.05c.198.604.485.84.833.84.347 0 .5-.16.694-.347l2.058-2.002 4.28 3.157c.786.434 1.354.21 1.55-.728l2.807-13.24c.272-1.098-.418-1.598-1.274-1.575z"/>
           </svg>
-          @your_instagram
+          @elfshops
         </a>
       </div>
     </div>
@@ -129,8 +126,7 @@
   <!-- ===== FOOTER ===== -->
   <footer>
     <p>© 2025 ElfShop · Made with 💜 ·
-      <!-- ERSETZE den Instagram-Link -->
-      <a href="https://instagram.com/your_instagram" target="_blank" rel="noopener">@your_instagram</a>
+      <a href="https://t.me/elfshops" target="_blank" rel="noopener">@elfshops</a>
     </p>
   </footer>
 
@@ -143,7 +139,7 @@
     // ===== CONFIG =====
     // ERSETZE mit deiner WhatsApp-Nummer: https://wa.me/49XXXXXXXXXX
     // oder Telegram:                      https://t.me/your_username
-    const CONTACT_URL = 'https://wa.me/4900000000000';
+    const CONTACT_URL = 'https://t.me/elfshops';
 
     // ===== STATE =====
     let currentBrand = 'all';
@@ -169,8 +165,7 @@
     }
 
     function buildOrderUrl(product) {
-      const text = `Ich möchte bestellen: ${product.name} – ${product.flavor}`;
-      return `${CONTACT_URL}?text=${encodeURIComponent(text)}`;
+      return CONTACT_URL;
     }
 
     function getNicotineBadge(product) {
