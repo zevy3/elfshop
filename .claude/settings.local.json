@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /home/archzev/.claude/image-cache/7a19ee75-a66a-41b0-a1c1-af6c33ec8885/3.png /home/archzev/elf_shop/images/waspe-40000-love666-strawberry.jpg)",
+      "Bash(cp /home/archzev/.claude/image-cache/7a19ee75-a66a-41b0-a1c1-af6c33ec8885/4.png /home/archzev/elf_shop/images/waspe-40000-melon-raspberry.jpg)",
+      "Bash(cp /home/archzev/.claude/image-cache/7a19ee75-a66a-41b0-a1c1-af6c33ec8885/5.png /home/archzev/elf_shop/images/randm-9000-all-flavors.jpg)",
+      "Bash(cp /home/archzev/.claude/image-cache/7a19ee75-a66a-41b0-a1c1-af6c33ec8885/6.png /home/archzev/elf_shop/images/elfbar-elfa-pro-raspberry-watermelon.jpg)",
+      "Bash(cp /home/archzev/.claude/image-cache/7a19ee75-a66a-41b0-a1c1-af6c33ec8885/7.png /home/archzev/elf_shop/images/elfbar-elfa-pro-mix-berries.jpg)"
+    ]
+  }
+}

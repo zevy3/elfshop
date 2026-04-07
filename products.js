@@ -35,7 +35,7 @@ const products = [
     price: 13.00,
     nicotine: null,
     note: null,
-    image: "images/randm-9000-strawberry-ice-purple.jpg",
+    image: "images/randm-9000-all-flavors.jpg",
     color: "#7b2ff7"
   },
   {
@@ -48,7 +48,7 @@ const products = [
     price: 13.00,
     nicotine: null,
     note: null,
-    image: "images/randm-9000-strawberry-ice-pink.jpg",
+    image: "images/randm-9000-all-flavors.jpg",
     color: "#e91e8c"
   },
   {
@@ -61,7 +61,7 @@ const products = [
     price: 13.00,
     nicotine: null,
     note: "2 ml / 5 ml Nikotin",
-    image: "images/randm-9000-kiwi-passion.jpg",
+    image: "images/randm-9000-all-flavors.jpg",
     color: "#4caf50"
   },
   {
@@ -74,7 +74,7 @@ const products = [
     price: 13.00,
     nicotine: null,
     note: null,
-    image: "images/randm-9000-strawberry-raspberry-cherry.jpg",
+    image: "images/randm-9000-all-flavors.jpg",
     color: "#ff5722"
   },
   {
