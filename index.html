@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElfShop — Einweg Vapes</title>
+  <meta name="description" content="Einweg Vapes Katalog: Elfbar, RandM Tornado, Waspe, Oxbar. Schnelle Lieferung in Deutschland.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">💨</div>
+        <div class="logo-text">Elf<span>Shop</span></div>
+      </a>
+      <div class="header-right">
+        <!-- ERSETZE @your_instagram mit deinem Account -->
+        <a href="https://instagram.com/your_instagram" target="_blank" rel="noopener" class="instagram-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          @your_instagram
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Einweg Vapes mit <em>Lieferung</em></h1>
+      <p>Originale Produkte · Große Geschmacksauswahl · Schnell &amp; einfach</p>
+    </div>
+  </section>
+
+  <!-- ===== FILTERS ===== -->
+  <div class="filters-section">
+    <div class="filters-label">Marke</div>
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-brand="all">Alle</button>
+      <button class="filter-btn" data-brand="Elfbar">Elfbar</button>
+      <button class="filter-btn" data-brand="RandM">RandM Tornado</button>
+      <button class="filter-btn" data-brand="Waspe">Waspe</button>
+      <button class="filter-btn" data-brand="Oxbar">Oxbar</button>
+    </div>
+  </div>
+
+  <!-- ===== CATALOG ===== -->
+  <main class="catalog-section">
+    <div class="catalog-count" id="catalog-count"></div>
+    <div class="catalog-grid" id="catalog-grid"></div>
+  </main>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <h2>Häufige Fragen</h2>
+    <div class="faq-list" id="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Wie bestelle ich?
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Klick auf „Bestellen" unter dem gewünschten Produkt — WhatsApp oder Telegram öffnet sich mit einer vorausgefüllten Nachricht. Einfach abschicken!</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Wie schnell ist die Lieferung?
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Lieferung am gleichen Tag innerhalb der Stadt. Liefergebiet und genaue Zeit bitte im Chat erfragen.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Sind die Produkte original?
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Ja, ausschließlich Originalware. Jedes Gerät kann über den QR-Code auf der Verpackung auf der Herstellerwebsite verifiziert werden.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Welche Zahlungsmethoden gibt es?
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <p>Barzahlung bei Lieferung oder Überweisung (PayPal, Banküberweisung). Details im Chat beim Bestellen.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== DISCLAIMER ===== -->
+  <div class="disclaimer">
+    <div class="disclaimer-box">
+      <strong>18+.</strong> Der Verkauf von Tabak- und Nikotinprodukten an Personen unter 18 Jahren ist in Deutschland gesetzlich verboten (§ 10 JuSchG).
+      Nikotinhaltige Produkte sind gesundheitsschädlich und machen abhängig.
+      Mit deiner Bestellung bestätigst du, volljährig zu sein.
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 ElfShop · Made with 💜 ·
+      <!-- ERSETZE den Instagram-Link -->
+      <a href="https://instagram.com/your_instagram" target="_blank" rel="noopener">@your_instagram</a>
+    </p>
+  </footer>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="products.js"></script>
+  <script>
+    // ===== CONFIG =====
+    // ERSETZE mit deiner WhatsApp-Nummer: https://wa.me/49XXXXXXXXXX
+    // oder Telegram:                      https://t.me/your_username
+    const CONTACT_URL = 'https://wa.me/4900000000000';
+
+    // ===== STATE =====
+    let currentBrand = 'all';
+
+    // ===== RENDER =====
+    function getFilteredProducts() {
+      if (currentBrand === 'all') return products;
+      return products.filter(p => p.brand === currentBrand);
+    }
+
+    function formatPuffs(n) {
+      return n >= 1000 ? (n / 1000).toFixed(0) + 'k' : n;
+    }
+
+    function formatPrice(price) {
+      return price.toFixed(2).replace('.', ',');
+    }
+
+    function getProductEmoji(brand) {
+      const map = { Elfbar: '🔵', RandM: '🌪️', Waspe: '🐝', Oxbar: '⚡' };
+      return map[brand] || '💨';
+    }
+
+    function buildOrderUrl(product) {
+      const text = `Ich möchte bestellen: ${product.name} – ${product.flavor}`;
+      return `${CONTACT_URL}?text=${encodeURIComponent(text)}`;
+    }
+
+    function renderCard(product) {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const imgHtml = `
+        <div class="card-img">
+          <img
+            src="${product.image}"
+            alt="${product.name} ${product.flavor}"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+          <div class="card-img-placeholder" style="background: linear-gradient(145deg, ${product.color}33, ${product.color}88); display:none;">
+            <div class="placeholder-icon">${getProductEmoji(product.brand)}</div>
+            <div class="placeholder-name">${product.flavor}</div>
+          </div>
+          <div class="puffs-badge">${formatPuffs(product.puffs)} Puffs</div>
+        </div>
+      `;
+
+      card.innerHTML = `
+        ${imgHtml}
+        <div class="card-body">
+          <div class="card-brand">${product.brand}</div>
+          <div class="card-name">${product.name}</div>
+          <div class="card-flavor">${product.flavor}</div>
+          <div class="card-footer">
+            <div class="card-price">${formatPrice(product.price)} <span>€</span></div>
+            <button class="order-btn" data-id="${product.id}">Bestellen</button>
+          </div>
+        </div>
+      `;
+
+      card.querySelector('.order-btn').addEventListener('click', () => {
+        window.open(buildOrderUrl(product), '_blank', 'noopener');
+        showToast(`✅ Chat geöffnet – ${product.name}`);
+      });
+
+      return card;
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('catalog-grid');
+      const count = document.getElementById('catalog-count');
+      const filtered = getFilteredProducts();
+
+      grid.innerHTML = '';
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <div style="font-size:40px">🔍</div>
+            <p>Keine Produkte gefunden</p>
+          </div>`;
+        count.textContent = '';
+        return;
+      }
+
+      count.textContent = `${filtered.length} Produkt${filtered.length !== 1 ? 'e' : ''}`;
+      filtered.forEach(p => grid.appendChild(renderCard(p)));
+    }
+
+    // ===== FILTERS =====
+    document.getElementById('filters').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentBrand = btn.dataset.brand;
+      renderGrid();
+    });
+
+    // ===== FAQ =====
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // ===== TOAST =====
+    function showToast(msg) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = msg;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.add('fade-out');
+        toast.addEventListener('animationend', () => toast.remove());
+      }, 2500);
+    }
+
+    // ===== INIT =====
+    renderGrid();
+  </script>
+</body>
+</html>
