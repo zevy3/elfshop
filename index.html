@@ -150,7 +150,8 @@
     }
 
     function formatPuffs(n) {
-      return n >= 1000 ? (n / 1000).toFixed(0) + 'k' : n;
+      if (n >= 1000) return (n / 1000).toFixed(0) + 'k';
+      return n;
     }
 
     function formatPrice(price) {
@@ -165,6 +166,16 @@
     function buildOrderUrl(product) {
       const text = `Ich möchte bestellen: ${product.name} – ${product.flavor}`;
       return `${CONTACT_URL}?text=${encodeURIComponent(text)}`;
+    }
+
+    function getNicotineBadge(product) {
+      if (!product.nicotine) return '';
+      return `<span class="nic-badge">${product.nicotine}</span>`;
+    }
+
+    function getNoteBadge(product) {
+      if (!product.note) return '';
+      return `<span class="note-badge">${product.note}</span>`;
     }
 
     function renderCard(product) {
@@ -193,6 +204,10 @@
           <div class="card-brand">${product.brand}</div>
           <div class="card-name">${product.name}</div>
           <div class="card-flavor">${product.flavor}</div>
+          <div class="card-flavor card-flavor-ru">${product.flavorRu}</div>
+          <div class="card-badges">
+            ${getNicotineBadge(product)}${getNoteBadge(product)}
+          </div>
           <div class="card-footer">
             <div class="card-price">${formatPrice(product.price)} <span>€</span></div>
             <button class="order-btn" data-id="${product.id}">Bestellen</button>
