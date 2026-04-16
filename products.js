@@ -1,5 +1,32 @@
 const products = [
   {
+    id: 11,
+    brand: "ELFLIQ",
+    name: "ELFLIQ Salt Nic 10ml",
+    flavors: [
+      { flavor: "Apple Peach 🍏🍑",                       flavorRu: "Apfel · Pfirsich" },
+      { flavor: "Blueberry 🫐",                           flavorRu: "Blaubeere" },
+      { flavor: "Cherry 🍒",                              flavorRu: "Kirsche" },
+      { flavor: "Grape 🍇",                               flavorRu: "Traube" },
+      { flavor: "Sour Apple 🍏⚡️",                       flavorRu: "Saurer Apfel" },
+      { flavor: "Watermelon 🍉",                          flavorRu: "Wassermelone" },
+      { flavor: "Apple Pear 🍏🍐",                        flavorRu: "Apfel · Birne" },
+      { flavor: "Watermelon Cherry 🍉🍒",                 flavorRu: "Wassermelone · Kirsche" },
+      { flavor: "Grape Cherry 🍇🍒",                      flavorRu: "Traube · Kirsche" },
+      { flavor: "Strawberry Kiwi 🍓🥝",                   flavorRu: "Erdbeere · Kiwi" },
+      { flavor: "Cherry Lemon Peach 🍒🍋🍑",              flavorRu: "Kirsche · Zitrone · Pfirsich" },
+      { flavor: "Pink Lemonade 🍋🌸",                     flavorRu: "Pink Limonade" },
+      { flavor: "Strawberry Cherry Lemon 🍓🍒🍋",         flavorRu: "Erdbeere · Kirsche · Zitrone" },
+      { flavor: "Blueberry Raspberry Pomegranate 🫐🍓🍇", flavorRu: "Blaubeere · Himbeere · Granatapfel" },
+    ],
+    puffs: null,
+    price: 10.99,
+    nicotine: "10 ml · 20 mg/ml",
+    note: "Жижа для вейпа",
+    image: "images/elfliq-salt-nic.png",
+    color: "#e91e8c"
+  },
+  {
     id: 1,
     brand: "Elfbar",
     name: "ELFA PRO Pod",
@@ -63,32 +90,4 @@ const products = [
     image: "images/waspe-40000-kiwi-strawberry.jpg",
     color: "#455a64"
   },
-  {
-    id: 9,
-    brand: "Waspe",
-    name: "WASPE AIVIOU 40000",
-    flavor: "Love 666 + Strawberry Raspberry Cherry",
-    flavorRu: "Love 666 + Erdbeere · Himbeere · Kirsche",
-    puffs: 40000,
-    price: 14.99,
-    nicotine: null,
-    note: "2 Flavors in 1",
-    inStock: false,
-    image: "images/waspe-40000-love666-strawberry.jpg",
-    color: "#37474f"
-  },
-  {
-    id: 10,
-    brand: "Waspe",
-    name: "WASPE AIVIOU 40000",
-    flavor: "Triple Melon Ice + Raspberry Watermelon",
-    flavorRu: "Triple Melone · Eis + Himbeere · Wassermelone",
-    puffs: 40000,
-    price: 14.99,
-    nicotine: null,
-    note: "2 Flavors in 1",
-    inStock: false,
-    image: "images/waspe-40000-melon-raspberry.jpg",
-    color: "#e65100"
-  }
 ];
