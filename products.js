@@ -38,7 +38,7 @@ const products = [
     price: 10.00,
     nicotine: "2 ml · 20 mg/ml",
     note: null,
-    image: "images/elfbar-elfa-pro-mix-berries.jpg",
+    image: "images/elfbar-elfa-pro-raspberry-watermelon.jpg",
     color: "#9c27b0"
   },
   {
