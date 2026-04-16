@@ -335,6 +335,36 @@ header {
   margin-top: -2px;
 }
 
+.flavor-list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 160px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.flavor-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 6px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  border-left: 2px solid var(--accent);
+}
+.flavor-list .fl-name {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.flavor-list .fl-ru {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
 .card-badges {
   display: flex;
   flex-wrap: wrap;
@@ -403,6 +433,22 @@ header {
 
 .order-btn:active {
   transform: scale(0.96);
+}
+
+.out-of-stock-btn {
+  background: var(--surface-2) !important;
+  color: var(--text-dim) !important;
+  cursor: not-allowed;
+  box-shadow: none !important;
+}
+.out-of-stock-btn:hover {
+  background: var(--surface-2) !important;
+  box-shadow: none !important;
+}
+
+.card-out-of-stock {
+  opacity: 0.55;
+  filter: grayscale(0.4);
 }
 
 /* ===== EMPTY STATE ===== */

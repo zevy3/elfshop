@@ -179,37 +179,54 @@
 
     function renderCard(product) {
       const card = document.createElement('div');
-      card.className = 'card';
+      card.className = 'card' + (product.inStock === false ? ' card-out-of-stock' : '');
+
+      const firstFlavor = product.flavors ? product.flavors[0].flavor : product.flavor;
 
       const imgHtml = `
         <div class="card-img">
           <img
             src="${product.image}"
-            alt="${product.name} ${product.flavor}"
+            alt="${product.name} ${firstFlavor}"
             loading="lazy"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
           >
           <div class="card-img-placeholder" style="background: linear-gradient(145deg, ${product.color}33, ${product.color}88); display:none;">
             <div class="placeholder-icon">${getProductEmoji(product.brand)}</div>
-            <div class="placeholder-name">${product.flavor}</div>
+            <div class="placeholder-name">${firstFlavor}</div>
           </div>
-          <div class="puffs-badge">${formatPuffs(product.puffs)} Puffs</div>
+          ${product.puffs ? `<div class="puffs-badge">${formatPuffs(product.puffs)} Puffs</div>` : ''}
         </div>
       `;
+
+      let flavorHtml;
+      if (product.flavors) {
+        const items = product.flavors.map(f =>
+          `<li><span class="fl-name">${f.flavor}</span><span class="fl-ru">${f.flavorRu}</span></li>`
+        ).join('');
+        flavorHtml = `<ul class="flavor-list">${items}</ul>`;
+      } else {
+        flavorHtml = `
+          <div class="card-flavor">${product.flavor}</div>
+          <div class="card-flavor card-flavor-ru">${product.flavorRu}</div>
+        `;
+      }
 
       card.innerHTML = `
         ${imgHtml}
         <div class="card-body">
           <div class="card-brand">${product.brand}</div>
           <div class="card-name">${product.name}</div>
-          <div class="card-flavor">${product.flavor}</div>
-          <div class="card-flavor card-flavor-ru">${product.flavorRu}</div>
+          ${flavorHtml}
           <div class="card-badges">
             ${getNicotineBadge(product)}${getNoteBadge(product)}
           </div>
           <div class="card-footer">
             <div class="card-price">${formatPrice(product.price)} <span>€</span></div>
-            <button class="order-btn" data-id="${product.id}">Bestellen</button>
+            ${product.inStock === false
+              ? `<button class="order-btn out-of-stock-btn" disabled>Nicht verfügbar</button>`
+              : `<button class="order-btn" data-id="${product.id}">Bestellen</button>`
+            }
           </div>
         </div>
       `;
