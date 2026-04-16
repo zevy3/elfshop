@@ -373,8 +373,9 @@
     }
 
     // ---- Phases ----
-    const INTRO_MS  = 2800;   // полный заполнения экрана
-    const FADE_MS   = 600;    // плавный переход
+    const INTRO_MS  = 2800;   // заполнение экрана
+    const FADE_MS   = 600;    // переход к бокам
+    const STOP_MS   = 5000;   // перестаём спавнить новые частицы
     const startTime = performance.now();
 
     function loop(now) {
@@ -382,25 +383,28 @@
 
       const elapsed = now - startTime;
 
-      if (elapsed < INTRO_MS) {
-        // Фаза 1: интро — дым со всех краёв
-        const burst = elapsed < 400 ? 10 : 5;
-        for (let i = 0; i < burst; i++) spawnEdge();
-      } else if (elapsed < INTRO_MS + FADE_MS) {
-        // Плавный переход — меньше интро
-        for (let i = 0; i < 2; i++) spawnEdge();
-        spawnSide();
-      } else {
-        // Фаза 2: постоянный дым с боков
-        spawnSide();
+      if (elapsed < STOP_MS) {
+        if (elapsed < INTRO_MS) {
+          const burst = elapsed < 400 ? 10 : 5;
+          for (let i = 0; i < burst; i++) spawnEdge();
+        } else if (elapsed < INTRO_MS + FADE_MS) {
+          for (let i = 0; i < 2; i++) spawnEdge();
+          spawnSide();
+        } else {
+          spawnSide();
+        }
       }
+      // После 5с — новые частицы не спавним, старые доживают и пропадают
 
       for (let i = pool.length - 1; i >= 0; i--) {
         if (!pool[i].tick()) pool.splice(i, 1);
         else pool[i].draw();
       }
 
-      requestAnimationFrame(loop);
+      // Останавливаем loop когда всё исчезло
+      if (elapsed < STOP_MS || pool.length > 0) {
+        requestAnimationFrame(loop);
+      }
     }
 
     requestAnimationFrame(loop);
