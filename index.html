@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="smoke-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;"></canvas>
 
   <!-- ===== HEADER ===== -->
   <header>
@@ -297,6 +298,113 @@
 
     // ===== INIT =====
     renderGrid();
+  </script>
+
+  <!-- ===== SMOKE EFFECT ===== -->
+  <script>
+  (function () {
+    const canvas = document.getElementById('smoke-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H;
+
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // ---- Particle ----
+    function Smoke(x, y, vx, vy, isIntro) {
+      this.x = x; this.y = y;
+      this.vx = vx; this.vy = vy;
+      this.r  = 18 + Math.random() * 35;
+      this.grow = 0.35 + Math.random() * 0.35;
+      this.life = 0;
+      this.maxLife = 110 + Math.random() * 90;
+      this.peakAlpha = isIntro ? 0.20 : 0.10;
+      this.alpha = 0;
+    }
+    Smoke.prototype.tick = function () {
+      this.life++;
+      this.x  += this.vx;
+      this.y  += this.vy;
+      this.vx *= 0.982;
+      this.vy *= 0.982;
+      this.r  += this.grow;
+      const t = this.life / this.maxLife;
+      this.alpha = t < 0.25
+        ? (t / 0.25) * this.peakAlpha
+        : t > 0.65
+          ? ((1 - t) / 0.35) * this.peakAlpha
+          : this.peakAlpha;
+      return this.life < this.maxLife;
+    };
+    Smoke.prototype.draw = function () {
+      const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+      g.addColorStop(0,   `rgba(210,210,230,${this.alpha})`);
+      g.addColorStop(0.45,`rgba(185,185,210,${this.alpha * 0.55})`);
+      g.addColorStop(1,   `rgba(160,160,190,0)`);
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fill();
+    };
+
+    // ---- Pool ----
+    const pool = [];
+
+    function spawnEdge() {
+      const edge = Math.floor(Math.random() * 4);
+      const spd  = 0.9 + Math.random() * 1.4;
+      let x, y, vx, vy;
+      if      (edge === 0) { x = Math.random() * W; y = -15;    vx = (Math.random()-0.5)*0.8; vy =  spd; }
+      else if (edge === 1) { x = Math.random() * W; y = H + 15; vx = (Math.random()-0.5)*0.8; vy = -spd; }
+      else if (edge === 2) { x = -15;    y = Math.random() * H; vx =  spd; vy = (Math.random()-0.5)*0.8; }
+      else                 { x = W + 15; y = Math.random() * H; vx = -spd; vy = (Math.random()-0.5)*0.8; }
+      pool.push(new Smoke(x, y, vx, vy, true));
+    }
+
+    function spawnSide() {
+      const spd = 0.6 + Math.random() * 0.7;
+      const dy  = (Math.random() - 0.5) * 0.55;
+      if (Math.random() < 0.5) pool.push(new Smoke(-12, Math.random()*H,  spd, dy, false));
+      else                     pool.push(new Smoke(W+12, Math.random()*H, -spd, dy, false));
+    }
+
+    // ---- Phases ----
+    const INTRO_MS  = 2800;   // полный заполнения экрана
+    const FADE_MS   = 600;    // плавный переход
+    const startTime = performance.now();
+
+    function loop(now) {
+      ctx.clearRect(0, 0, W, H);
+
+      const elapsed = now - startTime;
+
+      if (elapsed < INTRO_MS) {
+        // Фаза 1: интро — дым со всех краёв
+        const burst = elapsed < 400 ? 10 : 5;
+        for (let i = 0; i < burst; i++) spawnEdge();
+      } else if (elapsed < INTRO_MS + FADE_MS) {
+        // Плавный переход — меньше интро
+        for (let i = 0; i < 2; i++) spawnEdge();
+        spawnSide();
+      } else {
+        // Фаза 2: постоянный дым с боков
+        spawnSide();
+      }
+
+      for (let i = pool.length - 1; i >= 0; i--) {
+        if (!pool[i].tick()) pool.splice(i, 1);
+        else pool[i].draw();
+      }
+
+      requestAnimationFrame(loop);
+    }
+
+    requestAnimationFrame(loop);
+  })();
   </script>
 </body>
 </html>
