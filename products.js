@@ -2,7 +2,7 @@ const products = [
   {
     id: 11,
     brand: "ELFLIQ",
-    name: "ELFLIQ Salt Nic 10ml",
+    name: "ELFLIQ Salt Nic 30ml",
     flavors: [
       { flavor: "Apple Peach 🍏🍑",                       flavorRu: "Apfel · Pfirsich" },
       { flavor: "Blueberry 🫐",                           flavorRu: "Blaubeere" },
@@ -21,7 +21,8 @@ const products = [
     ],
     puffs: null,
     price: 10.99,
-    nicotine: "10 ml · 20 mg/ml",
+    salePrice: 10.50,
+    nicotine: "30 ml · 50 mg/ml",
     note: "Жижа для вейпа",
     image: "images/elfliq-salt-nic.png",
     color: "#e91e8c"
@@ -58,7 +59,7 @@ const products = [
       { flavor: "Grape Ice", flavorRu: "Traube · Eis" },
     ],
     puffs: 9000,
-    price: 13.00,
+    price: 12.00,
     nicotine: "2 ml / 5 ml Nikotin",
     note: null,
     image: "images/randm-9000-all-flavors.jpg",

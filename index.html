@@ -224,7 +224,12 @@
             ${getNicotineBadge(product)}${getNoteBadge(product)}
           </div>
           <div class="card-footer">
-            <div class="card-price">${formatPrice(product.price)} <span>€</span></div>
+            <div class="card-price">
+              ${product.salePrice != null
+                ? `<span class="price-old">${formatPrice(product.price)} €</span><span class="price-sale">${formatPrice(product.salePrice)} <span>€</span></span>`
+                : `${formatPrice(product.price)} <span>€</span>`
+              }
+            </div>
             ${product.inStock === false
               ? `<button class="order-btn out-of-stock-btn" disabled>Nicht verfügbar</button>`
               : `<button class="order-btn" data-id="${product.id}">Bestellen</button>`
